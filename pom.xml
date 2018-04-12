@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.lanyu</groupId>
+	<artifactId>platform-service-api</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+
+	<name>platform-service-api</name>
+	<description>services out api</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.4.RELEASE</version>
+		<relativePath/>
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+	<!-- zuul组件 -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-zuul</artifactId>
+    </dependency>
+    <dependency>
+		<groupId>commons-io</groupId>
+		<artifactId>commons-io</artifactId>
+		<version>2.5</version>
+    </dependency>
+    <!-- boot组件 -->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-actuator</artifactId>
+	</dependency>	
+	
+  
+	<dependency>
+        <groupId>sfntly</groupId> 
+        <artifactId>sfntly</artifactId>   
+        <version>1.1</version> 
+    </dependency> 
+
+	<!-- 以太坊客户端 -->
+	<dependency>
+	  <groupId>org.web3j</groupId>
+	  <artifactId>core</artifactId>
+	  <version>3.3.1</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>com.aliyun</groupId>
+	  <artifactId>aliyun-java-sdk-core</artifactId>
+	  <version>3.2.8</version>
+	</dependency>
+	<dependency>
+	  <groupId>com.aliyun</groupId>
+	  <artifactId>aliyun-java-sdk-dysmsapi</artifactId>
+	  <version>1.1.0</version>
+	</dependency>
+
+<!--   
+	<dependency>
+	    <groupId>org.nutz</groupId>
+	    <artifactId>nutz-plugins-sfntly</artifactId>
+	    <version>1.r.60</version>
+	</dependency>
+
+  	  <dependency>
+        <groupId>org.apache.xmlgraphics</groupId>
+        <artifactId>batik-ttf2svg</artifactId>
+        <version>1.8</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.xmlgraphics</groupId>
+        <artifactId>batik-util</artifactId>
+        <version>1.8</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.xmlgraphics</groupId>
+        <artifactId>batik-svggen</artifactId>
+        <version>1.8</version>
+    </dependency> 
+     -->
+	<!-- eureka客户端 -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-eureka</artifactId>
+    </dependency>
+
+	<!-- MVC组件 -->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-web</artifactId>
+		<exclusions> 
+            <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+            </exclusion>
+            <exclusion>
+            		<groupId>com.fasterxml.jackson.core</groupId>
+            		<artifactId>jackson-databind</artifactId>
+        	</exclusion>
+       	</exclusions> 
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-undertow</artifactId>
+	</dependency>
+    <!-- 使用数据源 -->
+    <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid</artifactId>
+        <version>1.0.14</version>
+    </dependency>  
+    <!-- mysql驱动 -->
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <scope>runtime</scope>
+    </dependency>  
+    <!-- mybatis组件 -->
+	<dependency>
+		<groupId>org.mybatis.spring.boot</groupId>
+		<artifactId>mybatis-spring-boot-starter</artifactId>
+		<version>1.1.1</version>
+	</dependency>
+	<!-- 整合redis -->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-data-redis</artifactId>
+	</dependency>
+    <!-- 整合hystrix -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-hystrix</artifactId>
+    </dependency>
+    <!-- 整合hystrix仪表盘 -->
+    <dependency>
+           <groupId>org.springframework.cloud</groupId>
+           <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+    </dependency>	 	
+	<!-- 单元测试组件 -->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-test</artifactId>
+		<scope>test</scope>
+	</dependency>
+    <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-ribbon</artifactId>
+    </dependency>
+		<!-- api接口文档   swagger2 -->
+	<dependency>
+		<groupId>io.springfox</groupId>
+		<artifactId>springfox-swagger2</artifactId>
+		<version>2.5.0</version>
+	</dependency>
+	<dependency>
+		<groupId>io.springfox</groupId>
+		<artifactId>springfox-swagger-ui</artifactId>
+		<version>2.5.0</version>
+	</dependency>
+	<!-- 阿里云MNS -->
+	<dependency>
+	    <groupId>com.aliyun.mns</groupId>
+	    <artifactId>aliyun-sdk-mns</artifactId>
+	    <version>1.1.8</version>
+	    <classifier>jar-with-dependencies</classifier>
+	</dependency>    
+    <dependency>
+	    <groupId>com.google.code.gson</groupId>
+	    <artifactId>gson</artifactId>
+	</dependency>
+	<!-- 声明式服务调用 -->
+	<dependency>
+	    <groupId>org.springframework.cloud</groupId>
+	    <artifactId>spring-cloud-starter-feign</artifactId>
+	</dependency>
+	
+	</dependencies>
+	
+	
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Dalston.SR2</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+	<build>
+	<!-- 打包   -生产关掉
+	 
+ 		<resources>
+	        <resource>
+	            <directory>src/lib</directory>
+	            <targetPath>${project.build.directory}/${project.build.finalName} </targetPath>
+	            <includes>
+	                <include>**/*.jar</include>
+	            </includes>
+	        </resource>
+	        <resource>
+	            <directory>src/main/resources</directory>
+	            <targetPath>${project.build.directory}/${project.build.finalName} </targetPath>
+	        </resource>
+    	</resources> 
+ 	-->
+		<plugins>
+
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<!--指定outputDirectory					-->		
+				<configuration>
+				
+                  <outputDirectory>${project.build.directory}/${project.build.finalName} </outputDirectory>
+                  <overWriteReleases>false</overWriteReleases>
+                  <overWriteSnapshots>false</overWriteSnapshots>
+                  <overWriteIfNewer>true</overWriteIfNewer>
+				</configuration>
+
+			</plugin>
+			<plugin>
+			    <groupId>org.mybatis.generator</groupId>
+			    <artifactId>mybatis-generator-maven-plugin</artifactId>
+			    <version>1.3.2</version>
+			    <configuration>
+			        <configurationFile>${project.basedir}/src/main/resources/mybatis-generator/generatorConfig.xml</configurationFile>
+			        <verbose>true</verbose>
+			        <overwrite>true</overwrite>
+			    </configuration>
+			    <!--  自动打开注释，手动mybatis-generator:generate
+			    <executions>
+			        <execution>
+			            <id>Generate MyBatis Artifacts</id>
+			            <goals>
+			                <goal>generate</goal>
+			            </goals>
+			        </execution>
+			    </executions>
+			    
+			    <dependencies>
+			        <dependency>  
+                        <groupId>mysql</groupId>  
+                        <artifactId>mysql-connector-java</artifactId>  
+                        <version>5.1.31</version>  
+                    </dependency>  
+			        <dependency>
+			            <groupId>org.mybatis.generator</groupId>
+			            <artifactId>mybatis-generator-core</artifactId>
+			            <version>1.3.2</version>
+			        </dependency>
+			    </dependencies>
+			    -->
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

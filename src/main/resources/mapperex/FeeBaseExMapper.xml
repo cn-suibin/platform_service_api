@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mircoservice.mybatis.dao.mapperex.FeeBaseExMapper">
+<!--
+eviction LRU
+flushInterval缓存时间，以毫秒为单位
+size缓存大小
+readOnly如果为false的话，缓存对象必须是可序列化的-->
+<cache eviction="LRU"
+       type="org.apache.ibatis.cache.impl.PerpetualCache"
+       flushInterval="120000"
+       size="1024"
+       readOnly="true"/>
+    <select id="getDeptList" resultType="java.lang.String" useCache="true">
+      SELECT COUNT(*) from ctas_fee_base where name like '%佛%' 
+    </select>
+</mapper>
